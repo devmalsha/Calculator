@@ -1,7 +1,8 @@
-function clickedButton() {
-  if (document.getElementById("num1").value == 1) {
-    document.getElementById("display").innerHTML = 1;
-  } else if (document.getElementById("num2").value == 2) {
-    document.getElementById("display").innerHTML = 2;
-  }
-}
+const clicked = (btnId) => {
+  document.getElementById("display").innerHTML =
+    document.getElementById(btnId).id;
+};
+
+let displayedNumber = document.getElementById("display").innerText;
+document.getElementById("display").innerHTML = displayedNumber;
+console.log(displayedNumber);
