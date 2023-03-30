@@ -6,16 +6,13 @@ let secDisplay;
 let display;
 let sumNumber1;
 let sumIs;
-let afterOperator;
-let newVa;
+let afterOperator = "";
+let beforeOperator = "";
 const clicked = (idIs) => {
   secNum = document.getElementById(idIs).innerHTML;
   display = document.getElementById("display").innerHTML;
 
   if (operator) {
-    console.log(operator);
-    afterOperator = document.getElementById("display").innerHTML;
-    console.log(afterOperator);
     if (secDisplay) {
       secDisplay = secDisplay * 10 + secNum * 1;
       document.getElementById("display").innerHTML = secDisplay;
@@ -29,43 +26,34 @@ const clicked = (idIs) => {
     } else if (display !== 0) {
       secNum = display * 10 + secNum * 1;
       document.getElementById("display").innerHTML = secNum;
+      // afterOperator = document.getElementById("display").innerHTML;
     }
   }
 };
 
-// const lastClickedOperator = (clickedOperator) => {
-//   let clickedOperatorIs = document.getElementById(clickedOperator).innerHTML;
-//   if (clickedOperatorIs == "+") {
-//     return "+";
-//   } else if (clickedOperatorIs == "-") {
-//     return "-";
-//   } else {
-//     return false;
-//   }
-// };
-
 const addition = (sumId) => {
   operator = document.getElementById(sumId).innerHTML;
   beforeOperator = document.getElementById("display").innerHTML;
-
-  if (!afterOperator) {
-    afterOperator = 0;
-
-    beforeOperator = afterOperator * 1 + beforeOperator * 1;
-
-    document.getElementById("display").innerHTML = beforeOperator;
-  } else {
-    beforeOperator = afterOperator * 1 + beforeOperator * 1;
-
-    document.getElementById("display").innerHTML = beforeOperator;
-  }
-
+  // if (!afterOperator) {
+  //   afterOperator = 0;
+  //   afterOperator = afterOperator * 1 + beforeOperator * 1;
+  //   console.log(
+  //     "After Operator :" +
+  //       afterOperator +
+  //       " & " +
+  //       "Before Operator :" +
+  //       beforeOperator
+  //   );
+  //   document.getElementById("display").innerHTML = afterOperator;
+  // } else {
+  //   afterOperator = afterOperator * 1 + beforeOperator * 1;
+  //   document.getElementById("display").innerHTML = afterOperator;
+  // }
+  afterOperator = afterOperator * 1 + beforeOperator * 1;
+  document.getElementById("display").innerHTML = afterOperator;
   secDisplay = "";
 };
 
-const addOperation = (beforeOperator) => {
-  beforeOperator = this.beforeOperator;
-};
 const doSubstrac = (subId) => {
   operator = document.getElementById(subId).innerHTML;
   secDisplay = "";
