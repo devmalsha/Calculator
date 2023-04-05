@@ -18,7 +18,6 @@ const clicked = (idIs) => {
       document.getElementById("display").innerHTML = secDisplay;
     } else {
       document.getElementById("display").innerHTML = secNum;
-
       secDisplay = secNum;
     }
   } else {
@@ -54,10 +53,10 @@ const subtraction = (subId) => {
   secDisplay = "";
 };
 
-// function operations() {
-//   if (operator == "+") {
-//     let num1 = document.getElementById("display").innerHTML;
-//     num1 = num1 * 1 + newVa * 1;
-//     document.getElementById("display").innerHTML = num1;
-//   }
-// }
+const equalIs = (equalId) => {
+  if (operator == "+") {
+    addition(operator);
+  } else if (operator == "-") {
+    subtraction(operator);
+  }
+};
