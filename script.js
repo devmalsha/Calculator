@@ -42,8 +42,15 @@ const addition = (sumId) => {
 const subtraction = (subId) => {
   operator = document.getElementById(subId).innerHTML;
   beforeOperator = document.getElementById("display").innerHTML;
-  afterOperator = beforeOperator * 1 - afterOperator * 1;
-  document.getElementById("display").innerHTML = afterOperator;
+  if (afterOperator > beforeOperator) {
+    afterOperator = beforeOperator * 1 - afterOperator * 1;
+    afterOperator = afterOperator * -1;
+    document.getElementById("display").innerHTML = afterOperator;
+    console.log("hi");
+  } else if (afterOperator < beforeOperator) {
+    afterOperator = beforeOperator * 1 - afterOperator * 1;
+    document.getElementById("display").innerHTML = -afterOperator;
+  }
   secDisplay = "";
 };
 
