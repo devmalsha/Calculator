@@ -49,6 +49,9 @@ const subtraction = (subId) => {
   } else if (afterOperator < beforeOperator) {
     afterOperator = beforeOperator * 1 - afterOperator * 1;
     document.getElementById("display").innerHTML = -afterOperator;
+  } else {
+    afterOperator = beforeOperator * 1 - afterOperator * 1;
+    document.getElementById("display").innerHTML = afterOperator;
   }
   secDisplay = "";
 };
