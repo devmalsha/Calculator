@@ -1,18 +1,22 @@
-.outline {
-  /* display: grid;
-  grid-template-columns: 4px auto auto auto; */
+.calculator {
+  display: flex;
+  justify-content: center;
   background-color: blue;
-  padding: 8px;
+  display: grid;
+  grid-template-rows: 50px;
+  gap: 10px;
+  grid-template-columns: 50px 50px 50px 50px;
 }
+/* .equalBtn {
+  grid-template-rows: 1 / span 2;
+} */
 
-#display {
-  width: 100%;
+.display {
   height: 50px;
   background-color: rgb(215, 14, 14);
   font-size: 25px;
   font: bolder;
   color: black;
-
   text-align: right;
 }
 
