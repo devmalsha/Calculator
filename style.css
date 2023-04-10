@@ -1,21 +1,37 @@
 .calculator {
+  height: 100vh;
   display: grid;
   gap: 10px;
-  grid-template: 50px 50px 50px 50px 50px 50px / 50px 50px 50px 50px;
-  align-content: space-around;
+  grid-template: 75px 75px 75px 75px 75px 75px / 75px 75px 75px 75px;
   justify-content: center;
+  align-content: center;
   background-color: blue;
 }
 
 .calculator > div {
+  padding-top: 19px;
+  padding-right: 8px;
   grid-column: 1/5;
-  background-color: rgb(215, 14, 14);
-  font-size: 25px;
-  font: bolder;
+  background-color: white;
+  font-size: xx-large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: black;
   text-align: right;
+  border-radius: 5px;
+  border: solid black;
 }
 
 .qualBtn {
-  grid-column: 1/5;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  grid-column: 2/5;
+  font-size: x-large;
+  border-radius: 5px;
+  border: solid black;
+}
+
+.number {
+  font-size: x-large;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 5px;
+  border: solid black;
 }

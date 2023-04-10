@@ -8,6 +8,7 @@ let sumNumber1;
 let sumIs;
 let afterOperator = "";
 let beforeOperator = "";
+let currentValueIs = "";
 const clicked = (idIs) => {
   secNum = document.getElementById(idIs).innerHTML;
   display = document.getElementById("display").innerHTML;
@@ -40,19 +41,7 @@ const addition = (sumId) => {
 
 const subtraction = (subId) => {
   operator = document.getElementById(subId).innerHTML;
-  beforeOperator = document.getElementById("display").innerHTML;
-  if (afterOperator > beforeOperator) {
-    afterOperator = beforeOperator * 1 - afterOperator * 1;
-    afterOperator = afterOperator * -1;
-    document.getElementById("display").innerHTML = afterOperator;
-    console.log("hi");
-  } else if (afterOperator < beforeOperator) {
-    afterOperator = beforeOperator * 1 - afterOperator * 1;
-    document.getElementById("display").innerHTML = -afterOperator;
-  } else {
-    afterOperator = beforeOperator * 1 - afterOperator * 1;
-    document.getElementById("display").innerHTML = afterOperator;
-  }
+  currentValueIs = document.getElementById("display").innerHTML;
   secDisplay = "";
 };
 
