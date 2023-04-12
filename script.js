@@ -9,6 +9,7 @@ let sumIs;
 let afterOperator = "";
 let beforeOperator = "";
 let currentValueIs = "";
+let storingValue;
 const clicked = (idIs) => {
   secNum = document.getElementById(idIs).innerHTML;
   display = document.getElementById("display").innerHTML;
@@ -33,8 +34,8 @@ const clicked = (idIs) => {
 
 const addition = (sumId) => {
   operator = document.getElementById(sumId).innerHTML;
-  beforeOperator = document.getElementById("display").innerHTML;
-  afterOperator = afterOperator * 1 + beforeOperator * 1;
+  currentValueIs = document.getElementById("display").innerHTML;
+  afterOperator = afterOperator * 1 + currentValueIs * 1;
   document.getElementById("display").innerHTML = afterOperator;
   secDisplay = "";
 };
@@ -43,21 +44,56 @@ const subtraction = (subId) => {
   operator = document.getElementById(subId).innerHTML;
   currentValueIs = document.getElementById("display").innerHTML;
   if (afterOperator == 0) {
-    console.log("Hi");
     afterOperator = currentValueIs * 1 - afterOperator * 1;
-    // console.log(afterOperator);
   }
   if (!afterOperator == 0 && currentValueIs > afterOperator) {
-    console.log("Hiii");
     afterOperator = afterOperator * 1 - currentValueIs * 1;
-    // console.log(afterOperator);
   } else if (!afterOperator == 0 && currentValueIs < afterOperator) {
-    console.log("Hiiiiiiii" + currentValueIs);
     afterOperator = afterOperator * 1 - currentValueIs * 1;
-    // console.log(afterOperator);
   }
   document.getElementById("display").innerHTML = afterOperator;
   secDisplay = "";
+};
+
+const multiplication = (multiId) => {
+  operator = document.getElementById(multiId).innerHTML;
+  currentValueIs = document.getElementById("display").innerHTML;
+  if (afterOperator == "") {
+    afterOperator = currentValueIs * 1;
+  } else {
+    afterOperator = currentValueIs * afterOperator;
+  }
+  document.getElementById("display").innerHTML = afterOperator;
+  secDisplay = "";
+};
+
+const division = (divId) => {
+  operator = document.getElementById(divId).innerHTML;
+  currentValueIs = document.getElementById("display").innerHTML;
+  if (afterOperator == "") {
+    afterOperator = currentValueIs * 1;
+  } else {
+    afterOperator = afterOperator / currentValueIs;
+  }
+  document.getElementById("display").innerHTML = afterOperator;
+  secDisplay = "";
+};
+
+const clearNum = () => {
+  afterOperator = document.getElementById("display").innerHTML;
+  let balanceNum = afterOperator.slice(0, afterOperator.length - 1);
+  document.getElementById("display").innerHTML = balanceNum;
+  // if (balanceNum == 0) {
+  //   document.getElementById("display").innerHTML = 0;
+  // }
+};
+
+const memory = () => {
+  storingValue = document.getElementById("display").innerHTML;
+};
+
+const decimal = () => {
+  document.getElementById("display").innerHTML = storingValue;
 };
 
 const equalIs = (equalId) => {
@@ -65,5 +101,9 @@ const equalIs = (equalId) => {
     addition(operator);
   } else if (operator == "-") {
     subtraction(operator);
+  } else if (operator == "*") {
+    multiplication(operator);
+  } else if (operator == "/") {
+    division(operator);
   }
 };
