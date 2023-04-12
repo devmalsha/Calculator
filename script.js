@@ -42,6 +42,21 @@ const addition = (sumId) => {
 const subtraction = (subId) => {
   operator = document.getElementById(subId).innerHTML;
   currentValueIs = document.getElementById("display").innerHTML;
+  if (afterOperator == 0) {
+    console.log("Hi");
+    afterOperator = currentValueIs * 1 - afterOperator * 1;
+    // console.log(afterOperator);
+  }
+  if (!afterOperator == 0 && currentValueIs > afterOperator) {
+    console.log("Hiii");
+    afterOperator = afterOperator * 1 - currentValueIs * 1;
+    // console.log(afterOperator);
+  } else if (!afterOperator == 0 && currentValueIs < afterOperator) {
+    console.log("Hiiiiiiii" + currentValueIs);
+    afterOperator = afterOperator * 1 - currentValueIs * 1;
+    // console.log(afterOperator);
+  }
+  document.getElementById("display").innerHTML = afterOperator;
   secDisplay = "";
 };
 
