@@ -9,7 +9,7 @@ let sumIs;
 let afterOperator = "";
 let beforeOperator = "";
 let currentValueIs = "";
-let storingValue;
+let storingValue="";
 const clicked = (idIs) => {
   secNum = document.getElementById(idIs).innerHTML;
   display = document.getElementById("display").innerHTML;
@@ -35,7 +35,13 @@ const clicked = (idIs) => {
 const addition = (sumId) => {
   operator = document.getElementById(sumId).innerHTML;
   currentValueIs = document.getElementById("display").innerHTML;
-  afterOperator = afterOperator * 1 + currentValueIs * 1;
+  if (afterOperator == 0) {
+    afterOperator = currentValueIs * 1;
+    console.log("afteroperator " + afterOperator);
+  } else {
+    console.log("Hii");
+    afterOperator = afterOperator * 1 + currentValueIs * 1;
+  }  
   document.getElementById("display").innerHTML = afterOperator;
   secDisplay = "";
 };
@@ -86,12 +92,14 @@ const clearNum = () => {
   // if (balanceNum == 0) {
   //   document.getElementById("display").innerHTML = 0;
   // }
+
+
 };
 
 const memory = () => {
-  storingValue = document.getElementById("display").innerHTML;
+   storingValue = document.getElementById("display"); 
+   console.log(storingValue); 
 };
-
 const decimal = () => {
   document.getElementById("display").innerHTML = storingValue;
 };
