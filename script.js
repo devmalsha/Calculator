@@ -59,6 +59,7 @@ const subtraction = (subId) => {
   }
   document.getElementById("display").innerHTML = afterOperator;
   secDisplay = "";
+
 };
 
 const multiplication = (multiId) => {
@@ -86,9 +87,12 @@ const division = (divId) => {
 };
 
 const clearNum = () => {
-  afterOperator = document.getElementById("display").innerHTML;
-  let balanceNum = afterOperator.slice(0, afterOperator.length - 1);
-  document.getElementById("display").innerHTML = balanceNum;
+  afterOperator = 0;  
+  document.getElementById("display").innerHTML = 0;
+  secDisplay = "";
+  // afterOperator = document.getElementById("display").innerHTML;
+  // let balanceNum = afterOperator.slice(0, afterOperator.length - 1);
+  // document.getElementById("display").innerHTML = balanceNum;
   // if (balanceNum == 0) {
   //   document.getElementById("display").innerHTML = 0;
   // }
