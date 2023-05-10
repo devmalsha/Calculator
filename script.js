@@ -96,14 +96,16 @@ const clearNum = () => {
   // if (balanceNum == 0) {
   //   document.getElementById("display").innerHTML = 0;
   // }
-
-
 };
 
-const memory = () => {
-   storingValue = document.getElementById("display"); 
-   console.log(storingValue); 
+const memoryServer = () => {
+   storingValue = document.getElementById("display").innerHTML; 
+   };
+
+const memoryRecall = () => {
+  document.getElementById("display").innerHTML=storingValue;  
 };
+
 const decimal = () => {
   document.getElementById("display").innerHTML = storingValue;
 };
