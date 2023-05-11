@@ -35,14 +35,15 @@ const clicked = (idIs) => {
 const addition = (sumId) => {
   operator = document.getElementById(sumId).innerHTML;
   currentValueIs = document.getElementById("display").innerHTML;
+  
   if (afterOperator == 0) {
     afterOperator = currentValueIs * 1;
-    console.log("afteroperator " + afterOperator);
-  } else {
-    console.log("Hii");
-    afterOperator = afterOperator * 1 + currentValueIs * 1;
-  }  
+  }
+    else {
+      afterOperator = afterOperator * 1 + currentValueIs * 1;    
+    }
   document.getElementById("display").innerHTML = afterOperator;
+  // afterOperator ="";
   secDisplay = "";
 };
 
@@ -111,8 +112,10 @@ const decimal = () => {
 };
 
 const equalIs = (equalId) => {
+
   if (operator == "+") {
     addition(operator);
+    afterOperator = "";
   } else if (operator == "-") {
     subtraction(operator);
   } else if (operator == "*") {
